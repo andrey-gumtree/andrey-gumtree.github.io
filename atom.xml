@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Gumtree Team Blog</title>
+	<link href="http://website.com/atom.xml" rel="self"/>
+	<link href="http://website.com"/>
+	<updated>2013-11-19T12:57:27.195Z</updated>
+	<id>http://website.com</id>
+	<author>
+		<name>Gumtree</name>
+		<email>your@email.com</email>
+	</author>
+
+	
+		<entry>
+			<title>Sessions, not that sticky</title>
+			<link href="http://website.com//posts/sticky-sessions"/>
+			<updated>2013-11-19T12:49:10.000Z</updated>
+			<id>http://website.com//posts/sticky-sessions</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;Sessions, not that sticky | Gumtree Team Blog&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;The Gumtree team blog.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Gumtree&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.54.7&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;
+
+	&lt;!-- Icons --&gt;
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;icons/favicon.ico&quot;&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;icons/apple-touch-icon-144-precomposed.png&quot;&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;icons/apple-touch-icon-114-precomposed.png&quot;&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot; href=&quot;icons/apple-touch-icon-72-precomposed.png&quot;&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;icons/apple-touch-icon-57-precomposed.png&quot;&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+	
+	&lt;!-- Styles --&gt;
+	&lt;link href='http://fonts.googleapis.com/css?family=Montserrat|Maven+Pro' rel='stylesheet' type='text/css'&gt;
+	&lt;style &gt;html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}&lt;/style&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/zurb-foundation.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/style.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/highlightjs-github.css&quot; /&gt;
+
+&lt;/head&gt;
+&lt;body &gt;
+	&lt;div id='layout'&gt;
+	    &lt;nav class=&quot;container top-bar&quot; style=&quot;&quot;&gt;
+	        &lt;ul class=&quot; title-area&quot;&gt;
+	          &lt;li class=&quot;name&quot;&gt;
+	            &lt;h1&gt;&lt;a href=&quot;/&quot;&gt; Gumtree Team Blog&lt;/a&gt;&lt;/h1&gt;
+	          &lt;/li&gt;
+	          &lt;li class=&quot;toggle-topbar menu-icon&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	        &lt;/ul&gt;  
+	        &lt;section class=&quot;top-bar-section&quot;&gt;
+	          &lt;ul class=&quot;right&quot;&gt;
+	          	
+	          	&lt;li class=&quot;divider hide-for-small&quot;&gt;&lt;/li&gt;
+					&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/about&quot; class=&quot;&quot;&gt;
+						&lt;a href=&quot;/pages/about&quot; property=&quot;dc:title&quot;&gt;About&lt;/a&gt;
+					&lt;/li&gt;
+				
+	          	&lt;li class=&quot;divider hide-for-small&quot;&gt;&lt;/li&gt;
+					&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/jobs&quot; class=&quot;&quot;&gt;
+						&lt;a href=&quot;/pages/jobs&quot; property=&quot;dc:title&quot;&gt;Jobs&lt;/a&gt;
+					&lt;/li&gt;
+				
+	          &lt;/ul&gt;
+	        &lt;/section&gt;
+	    &lt;/nav&gt;
+		&lt;div role=&quot;main&quot;&gt;
+			&lt;article id=&quot;post&quot; class=&quot;post&quot;&gt;
+
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;div class=&quot;columns post-content&quot;&gt;
+			&lt;h1&gt;Sessions, not that sticky&lt;/h1&gt;
+			&lt;span class=&quot;author&quot;&gt;By Andy Summers&lt;/span&gt;
+			&lt;span class=&quot;post-date&quot;&gt;Tue Nov 19 2013&lt;/span&gt;
+			&lt;p&gt;Like many other websites with a large number of concurrent users, parts of our architecture have to be scaled horizontally. In doing this, we have a load balancer in front of many running instances of the same web application, and user requests will be spread across these instances. It is common and convenient in web development to store temporary user data in session for use between requests. Most of our architecture is written using Spring MVC which has great support for this via the use of session-scoped beans and flash attributes. Session data is, however, all in-memory and only available within the scope of a single running application. Any time a developer programs an application to write some data to the session, he/she is making the assumption that subsequent requests whom require access to this data, will come to that same instance. With the load balancer setup described at the start - it becomes difficult to pre-determine which instance is going to get any one request. One way to deal with this is to use &amp;#39;sticky sessions&amp;#39; whereby the a particular cookie is dropped in the user&amp;#39;s browser, holding the session ID. The load balancer can then look for this cookie and maintain a mapping from this ID to the instance who is serving this particular user&amp;#39;s session.
+&lt;!-- Read more --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;sticky-sessions/sticky-session.png&quot; alt=&quot;User is working with a dedicated server node&quot; title=&quot;User is working with a dedicated server node&quot;&gt;&lt;/p&gt;
+&lt;p&gt;All well and good? But what if a particular instance of the application was misbehaving and needed to be restarted, or what if there was a new release of the application? Anytime you shut down a running application, it loses all its in-memory data. Any user whose session was being held by one instance, will have all their session data thrown away and this could be a very bad experience indeed.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;sticky-sessions/session-broken.png&quot; alt=&quot;User session is broken if the node is restarted&quot; title=&quot;User session is broken if the node is restarted&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Readers who use Gumtree to sell things will be familiar with the multi-step flow involved when posting an advert. On our desktop site such an activity involves 3 pages: one to pick a category; one to pick a location; and one to fill out all the details about their advert such as title, description, etc. Only when the user hits &amp;#39;Post my ad&amp;#39; after filling out the form, is anything submitted to our API and saved to database. Until recently, before this button was clicked all the advert data was being built up in session. The entire Post Ad flow was reliant on sticky sessions and a resilient application. Other user flows, such as paying for features, or interacting with the Manage Ads page, were also implemented this way.&lt;/p&gt;
+&lt;p&gt;This meant any restart or release of this particular application had to be performed, where possible, at a time of minimal traffic so as to disrupt the lowest number of users - generally the early hours of the morning. As we strive for continuous deployment we are often ready with potentially many new releases of this component a day, so coordinating these was a nightmare whilst we had these restrictions in place. Sticky sessions had proved to be more trouble that they were worth, and something had to be done.&lt;/p&gt;
+&lt;p&gt;Tomcat 7 has support for multiple instances within the same container (see &lt;a href=&quot;http://tomcat.apache.org/tomcat-7.0-doc/introduction.html&quot;&gt;http://tomcat.apache.org/tomcat-7.0-doc/introduction.html&lt;/a&gt;). This means a new release of the application can be started whilst the old version is still running - any user who had a session on the old version will be stuck to that instance until their session expires. Once all such sessions have expired, the old instance can be safely shut down, leaving only the new version running. This would solve the problem of doing releases without user impact, however we would still need session stickiness in the load balancer and restarting any misbehaving instance would still kill off any user sessions attached to it.&lt;/p&gt;
+&lt;p&gt;In the end we opted to try Redis (&lt;a href=&quot;http://redis.io&quot;&gt;http://redis.io&lt;/a&gt;) for storing all session data. Redis is essentially a simple key-value store with support for data types &amp;amp; collections, as well as supporting database-y concerns such as failover, sharding, monitoring etc. One concept that is very useful is that each key can be given a time-to-live (TTL), so any data written can behave in the same way as session data by expiring itself after a set period of time. Redis comes with client libraries for most common programming languages. As we are java, we used the Jedis library (&lt;a href=&quot;https://github.com/xetorthio/jedis&quot;&gt;https://github.com/xetorthio/jedis&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The application has now been enhanced such that for all places where we use session beans for writing data, we serialize the java object to JSON and write this to Redis too. Reads will come from Redis (values deserialized back into objects), but in the event of a failure the session will be called instead. Via configuration we can turn this off, or make it so that reads/writes are only done against Redis rather than session.&lt;/p&gt;
+&lt;p&gt;The keys are based on the &amp;#39;editorId&amp;#39; for Post Ad flows (as seen in the URL which is of the form /postad/{editorId}/category). We have a similar concept for other flows - see checkouts for example. To prevent cross-pollination of user data - i.e. what if user1 manages to copy user2&amp;#39;s editorId and uses it to take over their post ad flow - we prefix all a user&amp;#39;s keys with a unique id that is generated when they first log in. This is stored in a cookie so that any request the user makes will have the same prefix.&lt;/p&gt;
+&lt;p&gt;The code is all abstracted such that anywhere that needs to read or write such data goes through the same service. Said service is not aware of the underlying storage - a &amp;#39;SessionPersistenceStrategy&amp;#39; interface has the implementations for Redis, in-memory, and both. The actual write operations are done via a callback handler object. Another separate service takes responsibility for generating/retrieving the unique id from the user&amp;#39;s cookies, this is initialized via a Spring HandlerInterceptor at the start of the request.&lt;/p&gt;
+&lt;pre class=&quot;highlighted&quot;&gt;&lt;code class=&quot;java&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;JedisPersistenceStrategy&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;SessionPersistenceStrategy&lt;/span&gt; {&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; JedisPool jedisPool;
+    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; SessionIdService sessionIdService;
+
+    ….
+
+    &lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; writeOperation(WriteOperationCallback writeOperationCallback) {
+        Jedis jedis = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;
+        &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; {
+            jedis = jedisPool.getResource();
+
+            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (jedis == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) {
+                &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; JedisConnectionException(&lt;span class=&quot;string&quot;&gt;&quot;Cannot connect to Redis.&quot;&lt;/span&gt;);
+            }
+
+            writeOperationCallback.doWriteOperation(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; JedisWriteOperationHandler(jedis,
+                    sessionIdService.getUniqueSessionId())); &lt;span class=&quot;comment&quot;&gt;// uniqueSessionId comes from a cookie&lt;/span&gt;
+        } &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (JedisException je) {
+            &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SessionDataAccessException(je);
+        } &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (Exception je) {
+            &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SessionDataAccessException(je);
+        } &lt;span class=&quot;keyword&quot;&gt;finally&lt;/span&gt; {
+            jedisPool.returnResource(jedis);
+        }
+    }
+
+
+    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;JedisWriteOperationHandler&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;WriteOperationHandler&lt;/span&gt; {&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Jedis jedis;
+        &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String keyPrefix;
+
+        &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; JedisWriteOperationHandler(Jedis jedis, String keyPrefix) {
+            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.jedis = jedis;
+            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.keyPrefix = keyPrefix;
+        }
+
+        &lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; set(String key, String value, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; ttl) {
+            String fullKey = formatKey(keyPrefix, key); &lt;span class=&quot;comment&quot;&gt;// Just concatenate with '-' or something arbitrary&lt;/span&gt;
+            jedis.set(fullKey, value);
+            jedis.expire(fullKey, ttl);
+        }
+
+        &lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; expire(String key, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; ttl) {
+            String fullKey = formatKey(keyPrefix, key);
+            jedis.expire(fullKey, ttl);
+        }
+
+        &lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; del(String key) {
+            String fullKey = formatKey(keyPrefix, key);
+            jedis.del(fullKey);
+        }
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In terms of our infrastructure, we have so far gone with a simple master to handle all reads &amp;amp; writes, plus two slaves which simply sync from the master and are only there as backups.&lt;/p&gt;
+&lt;p&gt;You may be wondering why we still write the data to the in-memory store as well as Redis, when the overall aim was to eliminate sticky sessions. You will have spotted that reads are done from Redis primarily, but only where this fails will the sessions be called upon. Sticky sessions are still on so as to make this possible. The reason why this has been done is as a safeguard for the possibility that Redis does not work properly. So far however, after 3 months in production, we have had no failures from Redis even with the single master handling everything. The best news though is that restarting or releasing a new version of the application now has zero user impact. Any session that was &amp;#39;stuck&amp;#39; to a restarted instance will now be reassigned, and all the user&amp;#39;s data will be retrievable from Redis.&lt;/p&gt;
+&lt;p&gt;The next steps will be to beef up the Redis infrastructure - Redis Sentinel (&lt;a href=&quot;http://redis.io/topics/sentinel&quot;&gt;http://redis.io/topics/sentinel&lt;/a&gt;) is a common tool for this and this is an example setup &lt;a href=&quot;https://github.com/noise/redis-sentinel-tests&quot;&gt;https://github.com/noise/redis-sentinel-tests&lt;/a&gt;. Once we are confident that Redis can be our single point of failure, all mention of sessions within the application can be eliminated and stickiness can well and truly be turned off.&lt;/p&gt;
+
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/article&gt;
+
+
+&lt;div class=&quot;row&quot;&gt;
+
+
+	
+&lt;/div&gt;
+		&lt;/div&gt;
+	    &lt;div id='layout_footer'&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;footer id='footer' class=&quot;panel&quot;&gt;
+		&lt;div class=&quot;row&quot;&gt;
+			&lt;div class=&quot;columns large-5 small-12&quot;&gt;
+			&amp;copy; Gumtree.com 2013
+			&lt;/div&gt;
+			&lt;div class=&quot;columns large-7 small-12 &quot;&gt;
+				&lt;ul class=&quot;inline-list foot-right&quot;&gt;
+		          	
+		          	&lt;li class=&quot;divider hide-for-small&quot;&gt;&lt;/li&gt;
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/about&quot; class=&quot;&quot;&gt;
+							&lt;a href=&quot;/pages/about&quot; property=&quot;dc:title&quot;&gt;About&lt;/a&gt;
+						&lt;/li&gt;
+					
+		          	&lt;li class=&quot;divider hide-for-small&quot;&gt;&lt;/li&gt;
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/faq&quot; class=&quot;&quot;&gt;
+							&lt;a href=&quot;/pages/faq&quot; property=&quot;dc:title&quot;&gt;FAQ&lt;/a&gt;
+						&lt;/li&gt;
+					
+		          	&lt;li class=&quot;divider hide-for-small&quot;&gt;&lt;/li&gt;
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/jobs&quot; class=&quot;&quot;&gt;
+							&lt;a href=&quot;/pages/jobs&quot; property=&quot;dc:title&quot;&gt;Jobs&lt;/a&gt;
+						&lt;/li&gt;
+					
+		        &lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/footer&gt;
+	&lt;!-- Scripts --&gt;
+
+	&lt;!-- Depending on browser support load the zepto-pack or the jquery-pack. 
+		As configured (see grunt-config.json) this includes: 
+		 - modernizr, 
+		 - zepto OR jquery
+		 - foundation.topbar.js
+
+		condition jquery or zepto adapted from: 
+		http://foundation.zurb.com/docs/javascript.html
+	--&gt;
+	&lt;script&gt;
+	  document.write('&lt;script src=/scripts/'
+	    + ('__proto__' in {} ? 'zepto' : 'jquery')
+	    + '-pack.min.js&gt;&lt;\/script&gt;');
+	&lt;/script&gt;
+	&lt;script&gt;
+		//init all foundation plugins. 
+		//Currently this only includes foundation.topbar.js
+		//See http://foundation.zurb.com/docs/javascript.html
+		$(document).foundation();
+	&lt;/script&gt;
+	&lt;script &gt;(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage &amp;&amp; console &amp;&amp; console.log &amp;&amp; true);
+if ( log &amp;&amp; localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data &amp;&amp; data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/scripts/app.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>Reactive Programming: hype or truth?</title>
+			<link href="http://website.com//posts/reactive_programming_hype_or_truth"/>
+			<updated>2013-11-18T21:45:51.000Z</updated>
+			<id>http://website.com//posts/reactive_programming_hype_or_truth</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;Reactive Programming: hype or truth? | Gumtree Team Blog&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;The Gumtree team blog.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Gumtree&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.54.7&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;
+
+	&lt;!-- Icons --&gt;
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;icons/favicon.ico&quot;&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;icons/apple-touch-icon-144-precomposed.png&quot;&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;icons/apple-touch-icon-114-precomposed.png&quot;&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot; href=&quot;icons/apple-touch-icon-72-precomposed.png&quot;&gt;
+    &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;icons/apple-touch-icon-57-precomposed.png&quot;&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+	
+	&lt;!-- Styles --&gt;
+	&lt;link href='http://fonts.googleapis.com/css?family=Montserrat|Maven+Pro' rel='stylesheet' type='text/css'&gt;
+	&lt;style &gt;html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}&lt;/style&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/zurb-foundation.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/style.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/highlightjs-github.css&quot; /&gt;
+
+&lt;/head&gt;
+&lt;body &gt;
+	&lt;div id='layout'&gt;
+	    &lt;nav class=&quot;container top-bar&quot; style=&quot;&quot;&gt;
+	        &lt;ul class=&quot; title-area&quot;&gt;
+	          &lt;li class=&quot;name&quot;&gt;
+	            &lt;h1&gt;&lt;a href=&quot;/&quot;&gt; Gumtree Team Blog&lt;/a&gt;&lt;/h1&gt;
+	          &lt;/li&gt;
+	          &lt;li class=&quot;toggle-topbar menu-icon&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	        &lt;/ul&gt;  
+	        &lt;section class=&quot;top-bar-section&quot;&gt;
+	          &lt;ul class=&quot;right&quot;&gt;
+	          	
+	          	&lt;li class=&quot;divider hide-for-small&quot;&gt;&lt;/li&gt;
+					&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/about&quot; class=&quot;&quot;&gt;
+						&lt;a href=&quot;/pages/about&quot; property=&quot;dc:title&quot;&gt;About&lt;/a&gt;
+					&lt;/li&gt;
+				
+	          	&lt;li class=&quot;divider hide-for-small&quot;&gt;&lt;/li&gt;
+					&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/jobs&quot; class=&quot;&quot;&gt;
+						&lt;a href=&quot;/pages/jobs&quot; property=&quot;dc:title&quot;&gt;Jobs&lt;/a&gt;
+					&lt;/li&gt;
+				
+	          &lt;/ul&gt;
+	        &lt;/section&gt;
+	    &lt;/nav&gt;
+		&lt;div role=&quot;main&quot;&gt;
+			&lt;article id=&quot;post&quot; class=&quot;post&quot;&gt;
+
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;div class=&quot;columns post-content&quot;&gt;
+			&lt;h1&gt;Reactive Programming: hype or truth?&lt;/h1&gt;
+			&lt;span class=&quot;author&quot;&gt;By Pere Villega&lt;/span&gt;
+			&lt;span class=&quot;post-date&quot;&gt;Mon Nov 18 2013&lt;/span&gt;
+			&lt;p&gt;Let&amp;#39;s leave the keyboards and code aside for a moment, and let&amp;#39;s talk about the current state of art in programming. &lt;/p&gt;
+&lt;p&gt;As developers, we tend to like technology and novelty, sometimes making the mistake of putting them before the business needs which, let&amp;#39;s be honest, are more boring than the latest hack using &lt;a href=&quot;http://resources.infosecinstitute.com/some-cool-diy-raspberry-pi-projects/&quot;&gt;Raspberry Pi&lt;/a&gt;. The downside is that, quite often, we hype some new (or not so new) tool/language/thing into stardom and then drop it at the same speed while pursuing the next novelty we see around.&lt;/p&gt;
+&lt;p&gt;If you are keeping with technology news, you may have noticed a new word creeping around. &lt;strong&gt;Reactive&lt;/strong&gt;. You have the &lt;a href=&quot;http://www.reactivemanifesto.org/&quot;&gt;Reactive Manifesto&lt;/a&gt;. There is a course in &lt;a href=&quot;https://www.coursera.org/course/reactive&quot;&gt;Reactive Programming&lt;/a&gt;. Indeed, it is all over the place.&lt;/p&gt;
+&lt;p&gt;And so, the question arises: is reactive programming a buzzword doomed to die or, quite the opposite, it is a new way of working with a potential impact similar to the Agile Manifesto? &lt;/p&gt;
+&lt;p&gt;I personally believe that this isn&amp;#39;t hype, that &lt;em&gt;reactive programming&lt;/em&gt; is here to stay. Let me try to justify
+it.
+&lt;!-- Read more --&gt;&lt;/p&gt;
+&lt;h2 id=&quot;what-s-reactive-programming-&quot;&gt;What&amp;#39;s reactive programming?&lt;/h2&gt;
+&lt;p&gt;First of all, we should clarify what do we mean by reactive programming. The aforementioned &lt;a href=&quot;http://www.reactivemanifesto.org/&quot;&gt;Reactive Manifesto&lt;/a&gt; gives a bit more detail on the matter, but it all boils down to 4 properties that the signers of the manifesto want software to have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Event-driven &lt;/li&gt;
+&lt;li&gt;Scalable &lt;/li&gt;
+&lt;li&gt;Resilient&lt;/li&gt;
+&lt;li&gt;Responsive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As you can see, quite a generic definition that includes properties we all want in web-based apps. Event-driven is nothing new, servers like &lt;a href=&quot;http://wiki.nginx.org/Main&quot;&gt;Nginx&lt;/a&gt; used this to solve the C10K problem. Scalability and Resilience is something any software developer of any decent sized application wants to achieve. And we already know that &lt;a href=&quot;http://www.montparnas.com/articles/more-evidence-that-speed-is-key-to-user-experience/&quot;&gt;Responsiveness is money&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But, you may ask, if there is nothing new in this concept why has it become so popular recently? &lt;/p&gt;
+&lt;h2 id=&quot;benefits-of-reactive&quot;&gt;Benefits of reactive&lt;/h2&gt;
+&lt;p&gt;The answer to that question comes, as with many things, with context. We can&amp;#39;t deny that we are in a field that evolves extremely fast, just compare the technologies used on the web 10 years ago and now (hint: Gmail was released in April 2004 and it was revolutionary because it used…Ajax). &lt;/p&gt;
+&lt;p&gt;What is the current context in the web? Well, there are some interesting trends:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;mobile web:&lt;/strong&gt; smartphones and tablets are becoming the main tools for browsing the web&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;increase of users:&lt;/strong&gt; the percentage of the population using internet has increased. A lot. Which means that a popular website manages one or two orders of magnitude more users than in 2000.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;user expectations:&lt;/strong&gt; the fact that such a big percentage of the population uses the web has a downside for us, developers: few of them are early adopters which accept bugs as part of the deal. Users want a speed, quality, and for free (if possible). &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PaaS:&lt;/strong&gt; servers are cheap. Extremely cheap. Amazon, Heroku, DigitalOcean… you can deploy a new web server in minutes, at a cost of cents per hour. But due to the nature of the services they offer, you are forced to break your application into more components, which means more potential points of failure while systems talk between them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I could add more, but these are enough to show that the context has changed a lot, and it keeps changing. And this is where reactive programming ties in by defining properties that, in the past, were desirable but not critical. With the evolution of the web in the recent years, these properties have now become basic for any decent sized application.&lt;/p&gt;
+&lt;p&gt;For example, the emergence of PaaS and the reliance on remote calls via RESTful endpoints means that your code will be interacting with multiple components, any of which may fail. If your software is blocking (not event-driven) and synchronous, you are in for a nightmare made of exception handling code, low performance due to latency and thread locking, and unreliable code. &lt;/p&gt;
+&lt;p&gt;The natural solution to this issue is to go asynchronous and event driven, which in turn improves the scalability and resilience of the application by making it easier to handle errors and latency. That is, the solution is to go reactive.&lt;/p&gt;
+&lt;h2 id=&quot;reactive-and-typesafe&quot;&gt;Reactive and Typesafe&lt;/h2&gt;
+&lt;p&gt;There is an elephant in the room that has to be discussed. Most of the push for Reactive Programming comes from &lt;a href=&quot;http://typesafe.com/&quot;&gt;Typesafe&lt;/a&gt;, the company behind Scala. They want it to succeed and they would benefit from that, for sure. But can we reduce Reactive Programming to mere economic interest, a PR stunt by a tech company?&lt;/p&gt;
+&lt;p&gt;Is my personal opinion that it would be foolish to do so. As much as they have an economic interest on it, the manifesto Typesafe sponsored is not focussing on any technology in particular. It is not a Scala manifesto, forcing people to use their tools through FUD.&lt;/p&gt;
+&lt;p&gt;The manifesto, and the concepts behind reactive programming, focus on architectural principles. Some desirable properties are defined and justified, and these are properties that any professional application needs to have. It&amp;#39;s not just a matter of technology, but in many cases of survival: a slow, non-resilient application will not keep its users for long.&lt;/p&gt;
+&lt;p&gt;You have working alternatives out there. Like it or hate it, but Python (via Tornado](&lt;a href=&quot;http://www.tornadoweb.org/en/stable/&quot;&gt;http://www.tornadoweb.org/en/stable/&lt;/a&gt;)), Node.js and other frameworks can give you a reactive environment. The key here is not the tool used, but the architectural concepts behind. &lt;/p&gt;
+&lt;p&gt;So, yes, Typesafe has an economic interest. And they could have tried to push their own products. But instead they try to push a generic way of working, of good practices, that can benefit you whatever tools you use. This is not a matter of Akka vs other frameworks, it&amp;#39;s a matter of doing good software. &lt;/p&gt;
+&lt;p&gt;I hope that I&amp;#39;ve given you enough arguments to justify that Reactive Programming is not a fad, and that you should invest on learning more about it. Hype or truth? The discussion is open, feel free to join :)&lt;/p&gt;
+
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/article&gt;
+
+
+&lt;div class=&quot;row&quot;&gt;
+
+
+	
+	&lt;section id=&quot;related&quot; class=&quot;columns&quot;&gt;
+		&lt;h3&gt;Related Posts&lt;/h3&gt;
+		&lt;nav class=&quot;linklist&quot;&gt;
+			
+				&lt;li&gt;&lt;span&gt;Sun Nov 10 2013&lt;/span&gt;
+				&amp;raquo;
+				&lt;a href=&quot;/jobs/master&quot;&gt;Master of the Universe&lt;/a&gt;&lt;/li&gt;
+			
+		&lt;/nav&gt;
+	&lt;/section&gt;
+	
+&lt;/div&gt;
+		&lt;/div&gt;
+	    &lt;div id='layout_footer'&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;footer id='footer' class=&quot;panel&quot;&gt;
+		&lt;div class=&quot;row&quot;&gt;
+			&lt;div class=&quot;columns large-5 small-12&quot;&gt;
+			&amp;copy; Gumtree.com 2013
+			&lt;/div&gt;
+			&lt;div class=&quot;columns large-7 small-12 &quot;&gt;
+				&lt;ul class=&quot;inline-list foot-right&quot;&gt;
+		          	
+		          	&lt;li class=&quot;divider hide-for-small&quot;&gt;&lt;/li&gt;
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/about&quot; class=&quot;&quot;&gt;
+							&lt;a href=&quot;/pages/about&quot; property=&quot;dc:title&quot;&gt;About&lt;/a&gt;
+						&lt;/li&gt;
+					
+		          	&lt;li class=&quot;divider hide-for-small&quot;&gt;&lt;/li&gt;
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/faq&quot; class=&quot;&quot;&gt;
+							&lt;a href=&quot;/pages/faq&quot; property=&quot;dc:title&quot;&gt;FAQ&lt;/a&gt;
+						&lt;/li&gt;
+					
+		          	&lt;li class=&quot;divider hide-for-small&quot;&gt;&lt;/li&gt;
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/jobs&quot; class=&quot;&quot;&gt;
+							&lt;a href=&quot;/pages/jobs&quot; property=&quot;dc:title&quot;&gt;Jobs&lt;/a&gt;
+						&lt;/li&gt;
+					
+		        &lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/footer&gt;
+	&lt;!-- Scripts --&gt;
+
+	&lt;!-- Depending on browser support load the zepto-pack or the jquery-pack. 
+		As configured (see grunt-config.json) this includes: 
+		 - modernizr, 
+		 - zepto OR jquery
+		 - foundation.topbar.js
+
+		condition jquery or zepto adapted from: 
+		http://foundation.zurb.com/docs/javascript.html
+	--&gt;
+	&lt;script&gt;
+	  document.write('&lt;script src=/scripts/'
+	    + ('__proto__' in {} ? 'zepto' : 'jquery')
+	    + '-pack.min.js&gt;&lt;\/script&gt;');
+	&lt;/script&gt;
+	&lt;script&gt;
+		//init all foundation plugins. 
+		//Currently this only includes foundation.topbar.js
+		//See http://foundation.zurb.com/docs/javascript.html
+		$(document).foundation();
+	&lt;/script&gt;
+	&lt;script &gt;(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage &amp;&amp; console &amp;&amp; console.log &amp;&amp; true);
+if ( log &amp;&amp; localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data &amp;&amp; data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/scripts/app.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+</feed>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>Reactive Programming: hype or truth? | Gumtree Team Blog</title>
+	<meta name="description" content="The Gumtree team blog." />
+	<meta name="keywords" content="place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website" />
+	<meta name="author" content="Gumtree" />
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.54.7" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width" />
+
+	<!-- Icons -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Styles -->
+	<link href='http://fonts.googleapis.com/css?family=Montserrat|Maven+Pro' rel='stylesheet' type='text/css'>
+	<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/styles/zurb-foundation.css" /><link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/styles/highlightjs-github.css" />
+
+</head>
+<body >
+	<div id='layout'>
+	    <nav class="container top-bar" style="">
+	        <ul class=" title-area">
+	          <li class="name">
+	            <h1><a href="/"> Gumtree Team Blog</a></h1>
+	          </li>
+	          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	        </ul>  
+	        <section class="top-bar-section">
+	          <ul class="right">
+	          	
+	          	<li class="divider hide-for-small"></li>
+					<li typeof="sioc:Page" about="/pages/about" class="">
+						<a href="/pages/about" property="dc:title">About</a>
+					</li>
+				
+	          	<li class="divider hide-for-small"></li>
+					<li typeof="sioc:Page" about="/pages/jobs" class="">
+						<a href="/pages/jobs" property="dc:title">Jobs</a>
+					</li>
+				
+	          </ul>
+	        </section>
+	    </nav>
+		<div role="main">
+			<article id="post" class="post">
+
+	<div class="row">
+		<div class="columns post-content">
+			<h1>Reactive Programming: hype or truth?</h1>
+			<span class="author">By Pere Villega</span>
+			<span class="post-date">Mon Nov 18 2013</span>
+			<p>Let&#39;s leave the keyboards and code aside for a moment, and let&#39;s talk about the current state of art in programming. </p>
+<p>As developers, we tend to like technology and novelty, sometimes making the mistake of putting them before the business needs which, let&#39;s be honest, are more boring than the latest hack using <a href="http://resources.infosecinstitute.com/some-cool-diy-raspberry-pi-projects/">Raspberry Pi</a>. The downside is that, quite often, we hype some new (or not so new) tool/language/thing into stardom and then drop it at the same speed while pursuing the next novelty we see around.</p>
+<p>If you are keeping with technology news, you may have noticed a new word creeping around. <strong>Reactive</strong>. You have the <a href="http://www.reactivemanifesto.org/">Reactive Manifesto</a>. There is a course in <a href="https://www.coursera.org/course/reactive">Reactive Programming</a>. Indeed, it is all over the place.</p>
+<p>And so, the question arises: is reactive programming a buzzword doomed to die or, quite the opposite, it is a new way of working with a potential impact similar to the Agile Manifesto? </p>
+<p>I personally believe that this isn&#39;t hype, that <em>reactive programming</em> is here to stay. Let me try to justify
+it.
+<!-- Read more --></p>
+<h2 id="what-s-reactive-programming-">What&#39;s reactive programming?</h2>
+<p>First of all, we should clarify what do we mean by reactive programming. The aforementioned <a href="http://www.reactivemanifesto.org/">Reactive Manifesto</a> gives a bit more detail on the matter, but it all boils down to 4 properties that the signers of the manifesto want software to have:</p>
+<ul>
+<li>Event-driven </li>
+<li>Scalable </li>
+<li>Resilient</li>
+<li>Responsive</li>
+</ul>
+<p>As you can see, quite a generic definition that includes properties we all want in web-based apps. Event-driven is nothing new, servers like <a href="http://wiki.nginx.org/Main">Nginx</a> used this to solve the C10K problem. Scalability and Resilience is something any software developer of any decent sized application wants to achieve. And we already know that <a href="http://www.montparnas.com/articles/more-evidence-that-speed-is-key-to-user-experience/">Responsiveness is money</a>.</p>
+<p>But, you may ask, if there is nothing new in this concept why has it become so popular recently? </p>
+<h2 id="benefits-of-reactive">Benefits of reactive</h2>
+<p>The answer to that question comes, as with many things, with context. We can&#39;t deny that we are in a field that evolves extremely fast, just compare the technologies used on the web 10 years ago and now (hint: Gmail was released in April 2004 and it was revolutionary because it used…Ajax). </p>
+<p>What is the current context in the web? Well, there are some interesting trends:</p>
+<ul>
+<li><strong>mobile web:</strong> smartphones and tablets are becoming the main tools for browsing the web</li>
+<li><strong>increase of users:</strong> the percentage of the population using internet has increased. A lot. Which means that a popular website manages one or two orders of magnitude more users than in 2000.</li>
+<li><strong>user expectations:</strong> the fact that such a big percentage of the population uses the web has a downside for us, developers: few of them are early adopters which accept bugs as part of the deal. Users want a speed, quality, and for free (if possible). </li>
+<li><strong>PaaS:</strong> servers are cheap. Extremely cheap. Amazon, Heroku, DigitalOcean… you can deploy a new web server in minutes, at a cost of cents per hour. But due to the nature of the services they offer, you are forced to break your application into more components, which means more potential points of failure while systems talk between them.</li>
+</ul>
+<p>I could add more, but these are enough to show that the context has changed a lot, and it keeps changing. And this is where reactive programming ties in by defining properties that, in the past, were desirable but not critical. With the evolution of the web in the recent years, these properties have now become basic for any decent sized application.</p>
+<p>For example, the emergence of PaaS and the reliance on remote calls via RESTful endpoints means that your code will be interacting with multiple components, any of which may fail. If your software is blocking (not event-driven) and synchronous, you are in for a nightmare made of exception handling code, low performance due to latency and thread locking, and unreliable code. </p>
+<p>The natural solution to this issue is to go asynchronous and event driven, which in turn improves the scalability and resilience of the application by making it easier to handle errors and latency. That is, the solution is to go reactive.</p>
+<h2 id="reactive-and-typesafe">Reactive and Typesafe</h2>
+<p>There is an elephant in the room that has to be discussed. Most of the push for Reactive Programming comes from <a href="http://typesafe.com/">Typesafe</a>, the company behind Scala. They want it to succeed and they would benefit from that, for sure. But can we reduce Reactive Programming to mere economic interest, a PR stunt by a tech company?</p>
+<p>Is my personal opinion that it would be foolish to do so. As much as they have an economic interest on it, the manifesto Typesafe sponsored is not focussing on any technology in particular. It is not a Scala manifesto, forcing people to use their tools through FUD.</p>
+<p>The manifesto, and the concepts behind reactive programming, focus on architectural principles. Some desirable properties are defined and justified, and these are properties that any professional application needs to have. It&#39;s not just a matter of technology, but in many cases of survival: a slow, non-resilient application will not keep its users for long.</p>
+<p>You have working alternatives out there. Like it or hate it, but Python (via Tornado](<a href="http://www.tornadoweb.org/en/stable/">http://www.tornadoweb.org/en/stable/</a>)), Node.js and other frameworks can give you a reactive environment. The key here is not the tool used, but the architectural concepts behind. </p>
+<p>So, yes, Typesafe has an economic interest. And they could have tried to push their own products. But instead they try to push a generic way of working, of good practices, that can benefit you whatever tools you use. This is not a matter of Akka vs other frameworks, it&#39;s a matter of doing good software. </p>
+<p>I hope that I&#39;ve given you enough arguments to justify that Reactive Programming is not a fad, and that you should invest on learning more about it. Hype or truth? The discussion is open, feel free to join :)</p>
+
+		</div>
+	</div>
+</article>
+
+
+<div class="row">
+
+
+	
+	<section id="related" class="columns">
+		<h3>Related Posts</h3>
+		<nav class="linklist">
+			
+				<li><span>Sun Nov 10 2013</span>
+				&raquo;
+				<a href="/jobs/master">Master of the Universe</a></li>
+			
+		</nav>
+	</section>
+	
+</div>
+		</div>
+	    <div id='layout_footer'></div>
+	</div>
+	<footer id='footer' class="panel">
+		<div class="row">
+			<div class="columns large-5 small-12">
+			&copy; Gumtree.com 2013
+			</div>
+			<div class="columns large-7 small-12 ">
+				<ul class="inline-list foot-right">
+		          	
+		          	<li class="divider hide-for-small"></li>
+						<li typeof="sioc:Page" about="/pages/about" class="">
+							<a href="/pages/about" property="dc:title">About</a>
+						</li>
+					
+		          	<li class="divider hide-for-small"></li>
+						<li typeof="sioc:Page" about="/pages/faq" class="">
+							<a href="/pages/faq" property="dc:title">FAQ</a>
+						</li>
+					
+		          	<li class="divider hide-for-small"></li>
+						<li typeof="sioc:Page" about="/pages/jobs" class="">
+							<a href="/pages/jobs" property="dc:title">Jobs</a>
+						</li>
+					
+		        </ul>
+			</div>
+		</div>
+	</footer>
+	<!-- Scripts -->
+
+	<!-- Depending on browser support load the zepto-pack or the jquery-pack. 
+		As configured (see grunt-config.json) this includes: 
+		 - modernizr, 
+		 - zepto OR jquery
+		 - foundation.topbar.js
+
+		condition jquery or zepto adapted from: 
+		http://foundation.zurb.com/docs/javascript.html
+	-->
+	<script>
+	  document.write('<script src=/scripts/'
+	    + ('__proto__' in {} ? 'zepto' : 'jquery')
+	    + '-pack.min.js><\/script>');
+	</script>
+	<script>
+		//init all foundation plugins. 
+		//Currently this only includes foundation.topbar.js
+		//See http://foundation.zurb.com/docs/javascript.html
+		$(document).foundation();
+	</script>
+	<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script><script defer="defer"  src="/scripts/app.js"></script>
+</body>
+</html>

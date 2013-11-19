@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>Sessions, not that sticky | Gumtree Team Blog</title>
+	<meta name="description" content="The Gumtree team blog." />
+	<meta name="keywords" content="place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website" />
+	<meta name="author" content="Gumtree" />
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.54.7" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width" />
+
+	<!-- Icons -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Styles -->
+	<link href='http://fonts.googleapis.com/css?family=Montserrat|Maven+Pro' rel='stylesheet' type='text/css'>
+	<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/styles/zurb-foundation.css" /><link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/styles/highlightjs-github.css" />
+
+</head>
+<body >
+	<div id='layout'>
+	    <nav class="container top-bar" style="">
+	        <ul class=" title-area">
+	          <li class="name">
+	            <h1><a href="/"> Gumtree Team Blog</a></h1>
+	          </li>
+	          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	        </ul>  
+	        <section class="top-bar-section">
+	          <ul class="right">
+	          	
+	          	<li class="divider hide-for-small"></li>
+					<li typeof="sioc:Page" about="/pages/about" class="">
+						<a href="/pages/about" property="dc:title">About</a>
+					</li>
+				
+	          	<li class="divider hide-for-small"></li>
+					<li typeof="sioc:Page" about="/pages/jobs" class="">
+						<a href="/pages/jobs" property="dc:title">Jobs</a>
+					</li>
+				
+	          </ul>
+	        </section>
+	    </nav>
+		<div role="main">
+			<article id="post" class="post">
+
+	<div class="row">
+		<div class="columns post-content">
+			<h1>Sessions, not that sticky</h1>
+			<span class="author">By Andy Summers</span>
+			<span class="post-date">Tue Nov 19 2013</span>
+			<p>Like many other websites with a large number of concurrent users, parts of our architecture have to be scaled horizontally. In doing this, we have a load balancer in front of many running instances of the same web application, and user requests will be spread across these instances. It is common and convenient in web development to store temporary user data in session for use between requests. Most of our architecture is written using Spring MVC which has great support for this via the use of session-scoped beans and flash attributes. Session data is, however, all in-memory and only available within the scope of a single running application. Any time a developer programs an application to write some data to the session, he/she is making the assumption that subsequent requests whom require access to this data, will come to that same instance. With the load balancer setup described at the start - it becomes difficult to pre-determine which instance is going to get any one request. One way to deal with this is to use &#39;sticky sessions&#39; whereby the a particular cookie is dropped in the user&#39;s browser, holding the session ID. The load balancer can then look for this cookie and maintain a mapping from this ID to the instance who is serving this particular user&#39;s session.
+<!-- Read more --></p>
+<p><img src="sticky-sessions/sticky-session.png" alt="User is working with a dedicated server node" title="User is working with a dedicated server node"></p>
+<p>All well and good? But what if a particular instance of the application was misbehaving and needed to be restarted, or what if there was a new release of the application? Anytime you shut down a running application, it loses all its in-memory data. Any user whose session was being held by one instance, will have all their session data thrown away and this could be a very bad experience indeed.</p>
+<p><img src="sticky-sessions/session-broken.png" alt="User session is broken if the node is restarted" title="User session is broken if the node is restarted"></p>
+<p>Readers who use Gumtree to sell things will be familiar with the multi-step flow involved when posting an advert. On our desktop site such an activity involves 3 pages: one to pick a category; one to pick a location; and one to fill out all the details about their advert such as title, description, etc. Only when the user hits &#39;Post my ad&#39; after filling out the form, is anything submitted to our API and saved to database. Until recently, before this button was clicked all the advert data was being built up in session. The entire Post Ad flow was reliant on sticky sessions and a resilient application. Other user flows, such as paying for features, or interacting with the Manage Ads page, were also implemented this way.</p>
+<p>This meant any restart or release of this particular application had to be performed, where possible, at a time of minimal traffic so as to disrupt the lowest number of users - generally the early hours of the morning. As we strive for continuous deployment we are often ready with potentially many new releases of this component a day, so coordinating these was a nightmare whilst we had these restrictions in place. Sticky sessions had proved to be more trouble that they were worth, and something had to be done.</p>
+<p>Tomcat 7 has support for multiple instances within the same container (see <a href="http://tomcat.apache.org/tomcat-7.0-doc/introduction.html">http://tomcat.apache.org/tomcat-7.0-doc/introduction.html</a>). This means a new release of the application can be started whilst the old version is still running - any user who had a session on the old version will be stuck to that instance until their session expires. Once all such sessions have expired, the old instance can be safely shut down, leaving only the new version running. This would solve the problem of doing releases without user impact, however we would still need session stickiness in the load balancer and restarting any misbehaving instance would still kill off any user sessions attached to it.</p>
+<p>In the end we opted to try Redis (<a href="http://redis.io">http://redis.io</a>) for storing all session data. Redis is essentially a simple key-value store with support for data types &amp; collections, as well as supporting database-y concerns such as failover, sharding, monitoring etc. One concept that is very useful is that each key can be given a time-to-live (TTL), so any data written can behave in the same way as session data by expiring itself after a set period of time. Redis comes with client libraries for most common programming languages. As we are java, we used the Jedis library (<a href="https://github.com/xetorthio/jedis">https://github.com/xetorthio/jedis</a>).</p>
+<p>The application has now been enhanced such that for all places where we use session beans for writing data, we serialize the java object to JSON and write this to Redis too. Reads will come from Redis (values deserialized back into objects), but in the event of a failure the session will be called instead. Via configuration we can turn this off, or make it so that reads/writes are only done against Redis rather than session.</p>
+<p>The keys are based on the &#39;editorId&#39; for Post Ad flows (as seen in the URL which is of the form /postad/{editorId}/category). We have a similar concept for other flows - see checkouts for example. To prevent cross-pollination of user data - i.e. what if user1 manages to copy user2&#39;s editorId and uses it to take over their post ad flow - we prefix all a user&#39;s keys with a unique id that is generated when they first log in. This is stored in a cookie so that any request the user makes will have the same prefix.</p>
+<p>The code is all abstracted such that anywhere that needs to read or write such data goes through the same service. Said service is not aware of the underlying storage - a &#39;SessionPersistenceStrategy&#39; interface has the implementations for Redis, in-memory, and both. The actual write operations are done via a callback handler object. Another separate service takes responsibility for generating/retrieving the unique id from the user&#39;s cookies, this is initialized via a Spring HandlerInterceptor at the start of the request.</p>
+<pre class="highlighted"><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JedisPersistenceStrategy</span> <span class="keyword">implements</span> <span class="title">SessionPersistenceStrategy</span> {</span>
+    <span class="keyword">private</span> JedisPool jedisPool;
+    <span class="keyword">private</span> SessionIdService sessionIdService;
+
+    ….
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public</span> <span class="keyword">void</span> writeOperation(WriteOperationCallback writeOperationCallback) {
+        Jedis jedis = <span class="keyword">null</span>;
+        <span class="keyword">try</span> {
+            jedis = jedisPool.getResource();
+
+            <span class="keyword">if</span> (jedis == <span class="keyword">null</span>) {
+                <span class="keyword">throw</span> <span class="keyword">new</span> JedisConnectionException(<span class="string">"Cannot connect to Redis."</span>);
+            }
+
+            writeOperationCallback.doWriteOperation(<span class="keyword">new</span> JedisWriteOperationHandler(jedis,
+                    sessionIdService.getUniqueSessionId())); <span class="comment">// uniqueSessionId comes from a cookie</span>
+        } <span class="keyword">catch</span> (JedisException je) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> SessionDataAccessException(je);
+        } <span class="keyword">catch</span> (Exception je) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> SessionDataAccessException(je);
+        } <span class="keyword">finally</span> {
+            jedisPool.returnResource(jedis);
+        }
+    }
+
+
+    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JedisWriteOperationHandler</span> <span class="keyword">implements</span> <span class="title">WriteOperationHandler</span> {</span>
+        <span class="keyword">private</span> Jedis jedis;
+        <span class="keyword">private</span> String keyPrefix;
+
+        <span class="keyword">public</span> JedisWriteOperationHandler(Jedis jedis, String keyPrefix) {
+            <span class="keyword">this</span>.jedis = jedis;
+            <span class="keyword">this</span>.keyPrefix = keyPrefix;
+        }
+
+        <span class="annotation">@Override</span>
+        <span class="keyword">public</span> <span class="keyword">void</span> set(String key, String value, <span class="keyword">int</span> ttl) {
+            String fullKey = formatKey(keyPrefix, key); <span class="comment">// Just concatenate with '-' or something arbitrary</span>
+            jedis.set(fullKey, value);
+            jedis.expire(fullKey, ttl);
+        }
+
+        <span class="annotation">@Override</span>
+        <span class="keyword">public</span> <span class="keyword">void</span> expire(String key, <span class="keyword">int</span> ttl) {
+            String fullKey = formatKey(keyPrefix, key);
+            jedis.expire(fullKey, ttl);
+        }
+
+        <span class="annotation">@Override</span>
+        <span class="keyword">public</span> <span class="keyword">void</span> del(String key) {
+            String fullKey = formatKey(keyPrefix, key);
+            jedis.del(fullKey);
+        }
+    }
+}</code></pre>
+<p>In terms of our infrastructure, we have so far gone with a simple master to handle all reads &amp; writes, plus two slaves which simply sync from the master and are only there as backups.</p>
+<p>You may be wondering why we still write the data to the in-memory store as well as Redis, when the overall aim was to eliminate sticky sessions. You will have spotted that reads are done from Redis primarily, but only where this fails will the sessions be called upon. Sticky sessions are still on so as to make this possible. The reason why this has been done is as a safeguard for the possibility that Redis does not work properly. So far however, after 3 months in production, we have had no failures from Redis even with the single master handling everything. The best news though is that restarting or releasing a new version of the application now has zero user impact. Any session that was &#39;stuck&#39; to a restarted instance will now be reassigned, and all the user&#39;s data will be retrievable from Redis.</p>
+<p>The next steps will be to beef up the Redis infrastructure - Redis Sentinel (<a href="http://redis.io/topics/sentinel">http://redis.io/topics/sentinel</a>) is a common tool for this and this is an example setup <a href="https://github.com/noise/redis-sentinel-tests">https://github.com/noise/redis-sentinel-tests</a>. Once we are confident that Redis can be our single point of failure, all mention of sessions within the application can be eliminated and stickiness can well and truly be turned off.</p>
+
+		</div>
+	</div>
+</article>
+
+
+<div class="row">
+
+
+	
+</div>
+		</div>
+	    <div id='layout_footer'></div>
+	</div>
+	<footer id='footer' class="panel">
+		<div class="row">
+			<div class="columns large-5 small-12">
+			&copy; Gumtree.com 2013
+			</div>
+			<div class="columns large-7 small-12 ">
+				<ul class="inline-list foot-right">
+		          	
+		          	<li class="divider hide-for-small"></li>
+						<li typeof="sioc:Page" about="/pages/about" class="">
+							<a href="/pages/about" property="dc:title">About</a>
+						</li>
+					
+		          	<li class="divider hide-for-small"></li>
+						<li typeof="sioc:Page" about="/pages/faq" class="">
+							<a href="/pages/faq" property="dc:title">FAQ</a>
+						</li>
+					
+		          	<li class="divider hide-for-small"></li>
+						<li typeof="sioc:Page" about="/pages/jobs" class="">
+							<a href="/pages/jobs" property="dc:title">Jobs</a>
+						</li>
+					
+		        </ul>
+			</div>
+		</div>
+	</footer>
+	<!-- Scripts -->
+
+	<!-- Depending on browser support load the zepto-pack or the jquery-pack. 
+		As configured (see grunt-config.json) this includes: 
+		 - modernizr, 
+		 - zepto OR jquery
+		 - foundation.topbar.js
+
+		condition jquery or zepto adapted from: 
+		http://foundation.zurb.com/docs/javascript.html
+	-->
+	<script>
+	  document.write('<script src=/scripts/'
+	    + ('__proto__' in {} ? 'zepto' : 'jquery')
+	    + '-pack.min.js><\/script>');
+	</script>
+	<script>
+		//init all foundation plugins. 
+		//Currently this only includes foundation.topbar.js
+		//See http://foundation.zurb.com/docs/javascript.html
+		$(document).foundation();
+	</script>
+	<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script><script defer="defer"  src="/scripts/app.js"></script>
+</body>
+</html>
